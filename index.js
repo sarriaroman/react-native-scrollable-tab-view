@@ -106,7 +106,7 @@ var ScrollableTabView = React.createClass({
    * @param  {Object} e
    */
   onPageScroll: function(e){
-    var pageNumber = this.viewPager.state.selectedPage;
+    var pageNumber = e.nativeEvent.position;
 
     if( pageNumber != this.state.currentPage ) {
       this.props.onChangeTab && this.props.onChangeTab({
@@ -137,7 +137,7 @@ var ScrollableTabView = React.createClass({
       flex: 1,
       flexDirection: 'row'
     };
-    
+
     // Adjust size only on iOS
     if( Platform.OS == 'ios' || this.props.useAlwaysScrollView ) {
       sceneContainerStyle.width = deviceWidth * this.props.children.length;
