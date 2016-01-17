@@ -122,6 +122,10 @@ var ScrollableTabView = React.createClass({
     }
   },
 
+  getCurrentPage: function() {
+    return this.state.currentPage;
+  },
+
   renderTabBar(props) {
     if (this.props.renderTabBar === false) {
       return null;
